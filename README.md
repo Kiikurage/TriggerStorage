@@ -33,7 +33,7 @@ This module can be used like `localStorage`.
 
 ### `TriggerStorage.setItem(key, value)`
 
-Set value with `key`. `value` muse be instance of `Number`, `String`, `Boolean, `Object`, `Array`. (= JSON serializable type).
+Set value with `key`. `value` muse be instance of `Number`, `String`, `Boolean`, `Object`, `Array`. (= JSON serializable type).
 
 
 ```js
