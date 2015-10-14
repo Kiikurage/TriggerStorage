@@ -34,7 +34,7 @@ var TriggerStorage = (function(exports) {
 	function setItem(key, value) {
 		var name = createName(key, value);
 
-		deleteTriggerByKey();
+		deleteTriggerByKey(key);
 
 		ScriptApp.newTrigger(name)
 			.timeBased()
