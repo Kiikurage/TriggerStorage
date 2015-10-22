@@ -85,7 +85,7 @@ var TriggerStorage = (function(exports) {
 	 */
 	function clearItemAll() {
 		var triggers = ScriptApp.getProjectTriggers(),
-			reg = createNameRegExp(''),
+			reg = new RegExp(PREFIX),
 			i, trigger;
 
 		for (i = 0; i < triggers.length; i++) {
