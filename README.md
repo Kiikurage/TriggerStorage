@@ -20,12 +20,15 @@ This code outputs `1` everytime, beacause the variants is not passed next task.
 So you must output the data to any-other persistent storage, like spreadsheets.
 But if you use TriggerStorage, you can easily save the variants persitently!
 
-## Install
+## How to Install
 
-Only 2 step.
+Only a few step!
 
-1. Create a script file in your Google Apps Script project.
-2. Copy [TriggerStorage.gs](https://github.com/Kiikurage/TriggerStorage/blob/master/TriggerStorage.gs) to the file.
+1. In the script editor, choose **"Resources"** -> **"Libraries"**
+2. Input this project key `MsOwFFwYJdI9wGDxpSBrsCM1XrfRO61GJ` into "Find a Library", and click "Select"
+3. Now, this library has been included! click "Save" and decelop your project.
+
+[TriggerStorage.gs](https://github.com/Kiikurage/TriggerStorage/blob/master/TriggerStorage.gs) to the file.
 
 ## Methods
 
@@ -55,6 +58,15 @@ Clear value with `key`.
 ```js
 TriggerStorage.clearItem('foo');
 ```
+
+### `TriggerStorage.clearItemAll()`
+
+remove all triggers created by TriggerStorage
+
+```js
+TriggerStorage.clearItemAll();
+```
+
 
 ## Sample
 
