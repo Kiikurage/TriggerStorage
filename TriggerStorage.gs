@@ -23,7 +23,8 @@ var TriggerStorage = (function(exports) {
 	 * curry-bracket "}" is invalid function name, and not need to be escaped.
 	 * So we can safely use it as 'not-normal-trigger-name'.
 	 */
-	var PREFIX = '}';
+	var PREFIX = '}',
+		storage = {};
 
 
 	/**
@@ -35,6 +36,7 @@ var TriggerStorage = (function(exports) {
 		var name = createName(key, value);
 
 		deleteTriggerByKey(key);
+		storage[key] = value;
 
 		ScriptApp.newTrigger(name)
 			.timeBased()
@@ -53,6 +55,8 @@ var TriggerStorage = (function(exports) {
 		var triggers = ScriptApp.getProjectTriggers(),
 			reg = createNameRegExp(key),
 			ma, i, name;
+
+		if (key in storage) return storage[key];
 
 		for (i = 0; i < triggers.length; i++) {
 			name = triggers[i].getHandlerFunction();
@@ -74,6 +78,25 @@ var TriggerStorage = (function(exports) {
 		deleteTriggerByKey(key);
 	}
 	exports.clearItem = clearItem;
+
+
+	/**
+	 * Delete all triggers registered by TriggerStorage
+	 */
+	function clearItemAll() {
+		var triggers = ScriptApp.getProjectTriggers(),
+			reg = createNameRegExp(''),
+			i, trigger;
+
+		for (i = 0; i < triggers.length; i++) {
+			trigger = triggers[i];
+
+			if (reg.test(trigger.getHandlerFunction())) {
+				ScriptApp.deleteTrigger(trigger);
+			}
+		}
+	}
+	exports.clearItemAll = clearItemAll;
 
 
 	/**
