@@ -16,7 +16,7 @@ function batchTask(){
 }
 ```
 
-This code outputs `1` everytime, beacause the variants is not passed next task.
+This code outputs `1` everytime, because the variants is not passed next task.
 So you must output the data to any-other persistent storage, like spreadsheets.
 But if you use TriggerStorage, you can easily save the variants persitently!
 
@@ -24,11 +24,9 @@ But if you use TriggerStorage, you can easily save the variants persitently!
 
 Only a few step!
 
-1. In the script editor, choose **"Resources"** -> **"Libraries"**
-2. Input this project key `MsOwFFwYJdI9wGDxpSBrsCM1XrfRO61GJ` into "Find a Library", and click "Select"
-3. Now, this library has been included! click "Save" and decelop your project.
-
-[TriggerStorage.gs](https://github.com/Kiikurage/TriggerStorage/blob/master/TriggerStorage.gs) to the file.
+1. In the script editor, choose "Resources" -> "Libraries"
+2. Input this project key `MsOwFFwYJdI9wGDxpSBrsCM1XrfRO61GJ` into "Find a Library", click "Select", and choose the latest version.
+3. Now, this library has been included! click "Save" and develop your project.
 
 ## Methods
 
